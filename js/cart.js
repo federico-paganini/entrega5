@@ -9,21 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(cartData);
             cartData.articles.forEach(product => {
                 agregarProducto(product);
-            
-
-            
-
             });
-
-
         })
-
         .catch(error => {
             console.error("La solicitud no se completó correctamente", error);
         });
-
-
-
 
     function agregarProducto(producto) {
 
@@ -42,16 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>
                         <button class="btn btn-danger btn-sm">Eliminar</button>
                     </td>
-                </tr>`
-        
-
-
+                </tr>`;
     }
-
-
-
-
-
-
 
 });
