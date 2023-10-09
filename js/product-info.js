@@ -255,3 +255,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+ //evento del boton "agregar al carrito" que esta junto a los productos
+function carrito(producto){
+  const DatosProductos={
+    nombre:a,
+
+  }
+}
+
