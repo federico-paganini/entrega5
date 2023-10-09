@@ -36,3 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+//Datos de los productos desde "product-info" a la página "cart"
+const infoProducto=JSON.parse(localStorage.getItem('infoProducto')) || [];
+console.log('Datos del carrito:', infoProducto); //Verificar datos en consola

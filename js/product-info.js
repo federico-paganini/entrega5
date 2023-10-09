@@ -255,11 +255,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
- //evento del boton "agregar al carrito" que esta junto a los productos
-function carrito(producto){
-  const DatosProductos={
-    nombre:a,
-
-  }
+ //Evento del boton "agregar al carrito" que esta junto a los productos
+function carrito(nombre, precio, imagen){
+  const DatosProducto={
+    nombre: info.name, 
+    precio: `${info.currency} ${info.cost}`, 
+    imagen: info.images
+  };
+  console.log('Producto agregado al carrito:', DatosProducto); //Para probar si los datos se envian de forma correcta
+  const infoProducto=JSON.parse(localStorage.getItem('infoProducto')) || []; //Recuperar los datos almacenado de los productos y los convierte en objetos JavaScript. Si no hay datos, queda vacio, para evitar errores
+  infoProducto.push(DatosProducto);
+  localStorage.setItem('infoProducto', JSON.stringify(infoProducto));
 }
 
