@@ -79,7 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
             li_nav.classList.add("userclicked");
         }
     })
-
+    
+//Se borran los datos del carrito almacenados en localStorage al cerrar sesión
     function CerrarSesion(){
         localStorage.removeItem("carrito")
         localStorage.removeItem("infoProducto")
