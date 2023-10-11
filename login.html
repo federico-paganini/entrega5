@@ -13,71 +13,111 @@
   <link rel="stylesheet" href="css/login.css">
 </head>
 
-<body id="IngresoLogin">
-  <main class="mt-5">
-    <div class="container2">
-      <div>
-        <img src="img/login.png" alt="" class="logo">
-        <div class="button-box">
-          <div id="btn"></div>
-          <button type="button" id="btn-log">
-            <h5>Iniciar Sesión<h5>
-          </button>
-          <button type="button" id="btn-reg">
-            <h5>Registrarse</h5>
-          </button>
-        </div>
-        <div>
-          <form id="form-log">
-            <h3>¡Bienvenido!</h3>
-            <p>Ingresa tus datos en los siguientes campos para poder acceder a tu cuenta</p>
-            <input type="text" name="usuario" id="User" placeholder="Email o nombre de usuario" required>
-            <input type="password" name="contraseña" id="Pass" minlength="6" placeholder="Contraseña" required>
-            <input type="checkbox" name="mantenerini" id="manteneriniciado"> <span>Mantener sesión abierta</span>
-            <label for="manteneriniciado"></label>
-            <a href="">¿Olvidaste tu contraseña?</a>
-            <button type="submit" id="btn-submitlog">Ingresar</button>
+<body>
+  <main>
+    <div class="container d-flex justify-content-center align-items-center sizepers">
+      <div class="card formulary container2">
+        <div class="card-body">
+          <!--Logo de e-Mercado-->
+          <div class="form-group text-center">
+            <img src="img/login.png" alt="" class="img-fluid logo align-items-center mx-auto">
+          </div>
+          <!--Botones intercambio de formularios-->
+          <div class="form-group text-center mt-3">
+            <div class="btn-group button-box" role="group" id="form-seleccion">
+              <button id="btn-log" data-form="form-log" class="btn btn-primary">Iniciar Sesión</button>
+              <button id="btn-reg" data-form="form-reg" class="btn btn-success">Registrarse</button>
+              <div id="btn"></div>
+            </div>
+          </div>
+          <!--Formulario de Inicio de Sesión-->
+          <form method="post" id="form-log" class="form-activo">
+            <h3 class="text-center mt-4">¡Bienvenido!</h3>
+            <p class="text-center mb-4">Ingresa tus datos en los siguientes campos para poder acceder a tu
+              cuenta</p>
+            <div class="form-group mb-3">
+              <input type="text" name="usuario" class="form-control imputelement" id="User"
+                placeholder="Email o nombre de usuario" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="password" name="contraseña" class="form-control" id="Pass" minlength="6"
+                placeholder="Contraseña" required>
+            </div>
+            <div class="form-group d-flex justify-content-between mt-1">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="mantenerini" id="manteneriniciado">
+                <label class="form-check-label" for="manteneriniciado">Mantener sesión
+                  abierta</label>
+              </div>
+              <a href="">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="form-group text-center mt-3">
+              <button type="submit" id="btn-submitlog" class="btn btn-primary btn-lg">Ingresar</button>
+            </div>
           </form>
-
-          <form id="form-reg">
-            <input type="text" name="nuevousuario" id="New-User" placeholder="Nombre de Usuario" required>
-            <input type="email" name="nuevoemail" id="New-Mail" placeholder="Email" required>
-            <input type="tel" minlength="9" placeholder="Celular" required>
-            <label for="Departamento">Departamento</label>
-            <select name="dep" id="Departamento" required>
-              <option>--Elige un Departamento--</option>
-              <option value="Artigas">Artigas</option>
-              <option value="Canelones">Canelones</option>
-              <option value="CerroLargo">Cerro Largo</option>
-              <option value="Colonia">Colonia</option>
-              <option value="Durazno">Durazno</option>
-              <option value="Flores">Flores</option>
-              <option value="Florida">Florida</option>
-              <option value="Lavalleja">Lavalleja</option>
-              <option value="Maldonado">Maldonado</option>
-              <option value="Montevideo">Montevideo</option>
-              <option value="Paysandu">Paysandú</option>
-              <option value="Rionegro">Río Negro</option>
-              <option value="Rivera">Rivera</option>
-              <option value="Rocha">Rocha</option>
-              <option value="Salto">Salto</option>
-              <option value="Sanjose">San José</option>
-              <option value="Soriano">Soriano</option>
-              <option value="Tacuarembo">Tacuarembó</option>
-              <option value="Treintaytres">Treinta y Tres</option>
-            </select>
-            <input type="text" name="newcity" placeholder="Ciudad" required>
-            <input type="text" name="newdir" placeholder="Direccion" required>
-            <input type="password" name="newpass" id="newpass" minlength="6" placeholder="Contraseña" required>
-            <input type="password" name="confpass" id="confpass" minlength="6" placeholder="Repetir Contraseña"
-              required>
-            <label for="chk-data"></label>
-            <input type="checkbox" name="recibedata" id="chk-data"> <span>¿Deseas recibir información
-              actualizada?</span>
-            <button type="submit" id="btn-submitreg">REGISTRARME</button>
+          <!--Formulario de Registro-->
+          <form action="post" id="form-reg" class="form-inactivo mt-5">
+            <div class="form-group mb-3">
+              <input type="text" name="nuevousuario" id="New-User" class="form-control" placeholder="Nombre de Usuario"
+                required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="email" name="nuevoemail" class="form-control" id="New-Mail" placeholder="Email" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="tel" minlength="9" class="form-control" placeholder="Celular" required>
+            </div>
+            <div>
+              <select class="form-select text-muted mb-3" name="dep" id="Departamento" required>
+                <option selected>Departamento</option>
+                <option>--Elige un Departamento--</option>
+                <option value="Artigas">Artigas</option>
+                <option value="Canelones">Canelones</option>
+                <option value="CerroLargo">Cerro Largo</option>
+                <option value="Colonia">Colonia</option>
+                <option value="Durazno">Durazno</option>
+                <option value="Flores">Flores</option>
+                <option value="Florida">Florida</option>
+                <option value="Lavalleja">Lavalleja</option>
+                <option value="Maldonado">Maldonado</option>
+                <option value="Montevideo">Montevideo</option>
+                <option value="Paysandu">Paysandú</option>
+                <option value="Rionegro">Río Negro</option>
+                <option value="Rivera">Rivera</option>
+                <option value="Rocha">Rocha</option>
+                <option value="Salto">Salto</option>
+                <option value="Sanjose">San José</option>
+                <option value="Soriano">Soriano</option>
+                <option value="Tacuarembo">Tacuarembó</option>
+                <option value="Treintaytres">Treinta y Tres</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <input type="text" name="newcity" class="form-control" placeholder="Ciudad" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="text" name="newdir" class="form-control" placeholder="Direccion" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="password" name="newpass" class="form-control" id="newpass" minlength="6"
+                placeholder="Contraseña" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="password" name="confpass" id="confpass" class="form-control" placeholder="Repetir Contraseña"
+                minlength="6" required>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" class="form-check-input" name="recibedata" id="chk-data">
+              <label class="form-check-label" for="chk-data">¿Deseas recibir información
+                actualizada?</label>
+            </div>
+            <div class="form-group text-center mb-3 mt-3">
+              <button type="submit" name="subtn" id="btn-submitreg" class="btn btn-primary">REGISTRARME</button>
+            </div>
           </form>
         </div>
       </div>
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">

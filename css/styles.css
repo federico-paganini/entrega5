@@ -34,7 +34,7 @@ nav a {
   margin-bottom: 0;
   background-color: #53C0FB;
   background: url('../img/cover_back.png');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   color: black;
@@ -45,6 +45,15 @@ nav a {
   .jumbotron {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .jumbotron {
+    background: url('../img/cover_back_sm.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -198,45 +207,10 @@ a.custom-card:hover {
 
 /* Buscador Css */
 
-#icon-busq img {
-  width: 35px;
-  transition: all 300ms;
-  color: black;
-}
-
-#icon-busq {
-  cursor: pointer;
-  padding: 5px;
-  position: absolute;
-  display: flex;
-}
-
-.oculto {
-  width: 0; 
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  overflow: hidden;
-  transition: opacity 0,5s ease-in-out;
-  top: 0;
-  left: 0;
-}
-
-#search-bar {
+.dropfit {
+  width: max-content;
   border: none;
-  padding: 5px 20px 5px 20px;
-  border-radius: 20px;
-  transition: width 0.5s opacity 0,3s ease-in-out;
-  height: 40px;
-  width: 250px;
-  margin-bottom: 0;
-  margin-top: 50px;
-  background: white;
-  position:absolute;
-}
-
-.searchicon {
-  font-size: 140%;
+  background: none;
 }
 
 /* Tamaño máximo del carrusel */
@@ -246,13 +220,6 @@ a.custom-card:hover {
 
 .card-pointer {
   cursor: pointer;
-}
-
-
-/* Color de fondo de los botones del carrusel, eran blancos y no se veian con algunas imágenes */
-.carousel-control-prev,
-.carousel-control-next {
-  background-color: rgba(128, 128, 128, 0.404);
 }
 
   /* Comentario.CCS */

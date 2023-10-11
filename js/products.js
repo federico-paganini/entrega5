@@ -74,7 +74,7 @@ function displayProducts(products) {
   products.forEach(product => {
       
       let productCard = document.createElement("div");
-      productCard.classList.add("card", "col-3", "cardcursor");  //CAMBIE EL TIPO DE FORMATO DE PRESENTACION DE DATOS A COL POQUE QUEDA MEJOR A LA VISTA QUE LOS MB-4 QUE ESTABAN ANTES 
+      productCard.classList.add("card", "col-lg-3", "col-md-4", "col-sm-6", "col-12", "cardcursor");  //CAMBIE EL TIPO DE FORMATO DE PRESENTACION DE DATOS A COL POQUE QUEDA MEJOR A LA VISTA QUE LOS MB-4 QUE ESTABAN ANTES 
 
       let productImage = document.createElement("img");
       productImage.src = product.image;
