@@ -258,28 +258,32 @@ document.addEventListener("DOMContentLoaded", () => {
  //Evento del boton "agregar al carrito" que esta junto a los productos
 const infoProducto = JSON.parse(localStorage.getItem('infoProducto')) || [];
 
-function carrito(nombre, precio, imagen){
-  const ProductoExistente = infoProducto.find(item => item.nombre === nombre);
+function carrito(id ,nombre, precio, imagen){
+  const productoExistente = infoProducto.find(item => item.id === id);
   
-  if (ProductoExistente){
-    alert ("El producto ya esta en el carrito");
+  if (productoExistente){
+    productoExistente.cantidad++;
   } else{
     const DatosProducto={
-      nombre: info.name, 
-      precio: `${info.currency} ${info.cost}`, 
-      imagen: info.images,
+      id: id,
+      nombre: info.name,
+      precio: `${info.currency} ${info.cost}`,
+      imagen: info.image,
       cantidad: 1
     };
 
     infoProducto.push(DatosProducto);
-    localStorage.setItem('infoProducto', JSON.stringify(infoProducto));
-    console.log('Producto agregado al carrito:', DatosProducto);
   }
+  localStorage.setItem('infoProducto', JSON.stringify(infoProducto));
+    console.log('Producto agregado al carrito:', DatosProducto);
 }
 
-function agregarAlCarrito(nombre, precio, imagen) {
-  carrito(nombre, precio, imagen);
+function agregarAlCarrito(id, nombre, precio, imagen) {
+  carrito(id, nombre, precio, imagen);
 }
+
+
+
 
 
 
