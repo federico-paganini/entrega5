@@ -38,20 +38,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Datos de los productos desde "product-info" a la página "cart"
-const infoProducto=JSON.parse(localStorage.getItem('infoProducto')) || [];
+const infoProducto = JSON.parse(localStorage.getItem('infoProducto')) || [];
 console.log('Datos del carrito:', infoProducto); //Verificar datos en consola
 
+infoProducto.forEach((DatosProducto) => {
+    const productosCarrito = document.getElementById("productosCarrito"); // Agregar esta línea para obtener el elemento contenedor
 
-infoProducto.forEach((DatosProducto)=>{
-    const ValorPrecioTotal= DatosProducto.precio * DatosProducto.cantidad;
-    const ProductoDiv= document.createElement("div");
-    
+    const ProductoDiv = document.createElement("div");
+
+    // Calcular el valor total del producto
+    const ValorPrecioTotal = DatosProducto.precio * DatosProducto.cantidad;
+
     ProductoDiv.innerHTML = `
         <tr class="text-center">
-            <th><img id="imageCart" src="${DatosProducto .imagen}"></th>
-            <td>${DatosProducto .nombre}</td>
-            <td>${DatosProducto .precio}</td>
-            <td><input class="text-center small-input-carrito" value="${DatosProducto .cantidad}" placeholder="${DatosProducto .cantidad}"></td>
+            <th><img id="imageCart" src="${DatosProducto.imagen}"></th>
+            <td>${DatosProducto.nombre}</td>
+            <td>${DatosProducto.precio}</td>
+            <td><input class="text-center small-input-carrito" value="${DatosProducto.cantidad}" placeholder="${DatosProducto.cantidad}"></td>
             <td class="negrita">${ValorPrecioTotal}</td>
             <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
         </tr>`;
