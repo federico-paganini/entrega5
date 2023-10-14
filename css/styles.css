@@ -48,15 +48,6 @@ nav a {
   }
 }
 
-@media (max-width: 850px) {
-  .jumbotron {
-    background: url('../img/cover_back_sm.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-}
-
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
@@ -214,7 +205,8 @@ a.custom-card:hover {
 }
 
 /* Tamaño máximo del carrusel */
-#miCarousel, #relacionadosC {
+#miCarousel,
+#relacionadosC {
   max-width: 50%;
 }
 
@@ -222,32 +214,32 @@ a.custom-card:hover {
   cursor: pointer;
 }
 
-  /* Comentario.CCS */
+/* Comentario.CCS */
 
 .divGral {
-    margin: 20px;
-    padding: 20px;
-    position: relative;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #ff7010, #ff2b06);
-    border: 2px solid rgba(158, 158, 158, 0.5);
-    box-shadow: 0 1px 2px rgba(158, 158, 158, 0.5);
-    font-family: Arial, Helvetica, sans-serif;
-    flex: 1 1 10px;
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 500;
-    src: url(https://fonts.gstatic.com/s/raleway/v28/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
-    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    width: 900px;
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ff7010, #ff2b06);
+  border: 2px solid rgba(158, 158, 158, 0.5);
+  box-shadow: 0 1px 2px rgba(158, 158, 158, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
+  flex: 1 1 10px;
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/raleway/v28/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  width: 90%;
 }
 
 .estrellas {
-  font-size: 30px; 
+  font-size: 30px;
   color: gold;
   font-style: normal;
 }
-  
+
 /* Estilos de Estrellas de Calificación */
 .stars-valoration {
   margin: 0;
@@ -268,14 +260,14 @@ a.custom-card:hover {
 }
 
 .stars-label:hover,
-.stars-label.checked{
+.stars-label.checked {
   color: gold;
   text-shadow: 0 0 10px #952;
 }
 
 /* Aqui comienza el estilo para el menu desplegable del usuario*/
 
-#usuario:hover{
+#usuario:hover {
   background-color: #ff2b06;
   transition: 0.5s;
 }
@@ -285,17 +277,17 @@ a.custom-card:hover {
 }
 
 /* Cambios para manejar el background del menú de usuario según el modo seleccionado */
-.back-dkmode{
-  background-color:#28242cbd !important;
+.back-dkmode {
+  background-color: #28242cbd !important;
 }
 
-.back-lgmode{
-  background-color:rgba(255, 255, 255, 0.658);
+.back-lgmode {
+  background-color: rgba(255, 255, 255, 0.658);
 }
 
 /* Hover por defecto de bootstrap cambiado */
 
-.dropdown-item:hover{
+.dropdown-item:hover {
   background-color: #ff2b06;
   transition: 0.5s;
 }
@@ -317,7 +309,7 @@ a.custom-card:hover {
   min-width: 60px;
   min-height: 30px;
   border-radius: 20px;
-  box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
   transition: .5s;
   cursor: pointer;
 }
@@ -330,18 +322,18 @@ a.custom-card:hover {
   border-radius: 20px;
   top: 0;
   left: 0;
-  background: linear-gradient(to right,  #ff7010, #ff2b06);
+  background: linear-gradient(to right, #ff7010, #ff2b06);
   transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
   transition: .5s;
 }
 
-.toggleswitch input:checked ~ span{
-  background: linear-gradient(to right,  #ff7010, #ff2b06);
+.toggleswitch input:checked~span {
+  background: linear-gradient(to right, #ff7010, #ff2b06);
   transition: 1s;
 }
 
-.toggleswitch input:checked ~ span::after {
+.toggleswitch input:checked~span::after {
   transform: scale(1.1) translate(30px);
   background: #2c2c2c;
 }
@@ -353,7 +345,7 @@ a.custom-card:hover {
 .toggleswitch .off {
   position: absolute;
   color: white;
-  text-shadow: 0 0 8px yellow ;
+  text-shadow: 0 0 8px yellow;
   font-size: 28px;
   left: 1.2px;
   top: -7px;
@@ -373,12 +365,12 @@ a.custom-card:hover {
   opacity: 0;
 }
 
-.toggleswitch input:checked ~ span .off{
+.toggleswitch input:checked~span .off {
   transform: translate(30px);
   opacity: 0;
 }
 
-.toggleswitch input:checked ~ span .on{
+.toggleswitch input:checked~span .on {
   transform: translate(30px);
   opacity: 1;
 }

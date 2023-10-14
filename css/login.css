@@ -1,9 +1,17 @@
 /*Start login style*/
 
 body {
-  background-image: url(/img/Fondo_login.png), linear-gradient(to left, #ff914d, #ff3131) !important;
+  background-image: url('../img/Fondo_login.png'), linear-gradient(to left, #ff914d, #ff3131) !important;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@media (max-width: 768px) {
+  body {
+   background-image: url('../img/fondo_login_sm.jpg');
+   background-repeat: no-repeat;
+   background-size: contain;
+  }
 }
 
 .logo {
@@ -24,7 +32,7 @@ body {
   /*This part add color to the button div*/
   min-width: 70%;
   max-width: 90%;
-  height: 6vh;
+  height: fit-content;
   box-shadow: 0 0 10px 0px rgb(245, 212, 180);
   border-radius: 30px;
 }
@@ -134,8 +142,7 @@ body {
 
 .form-activo {
   opacity: 1;
-  height: auto;
-  max-height: 700px; /* Cambia esto al valor que desees para la altura máxima */
+  max-height: 700px;
   transition: opacity 1.3s ease-in-out, max-height 0.8s ease-in-out;
 }
 

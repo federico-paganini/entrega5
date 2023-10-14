@@ -31,6 +31,27 @@ document.addEventListener("DOMContentLoaded", function(){
     if(localStorage.getItem("darktheme") === "true") {
         btnligthmode.classList.remove("btn-light");
         btnligthmode.classList.add("btn-dark");
-    }
+     }
+
+     /* Adaptar el fondo según el tamaño de la pantalla */ 
+     const jumbotron = document.querySelector('.jumbotron');
+
+     function cambiarFondo() {
+       const width = window.innerWidth;
+       const height = window.innerHeight;
+   
+       if (width > height) {
+         jumbotron.style.backgroundImage = 'url("../img/cover_back.png")';
+         jumbotron.style.backgroundSize = 'contain';
+       } else {
+         jumbotron.style.backgroundImage = 'url("../img/cover_back_sm.png")';
+         jumbotron.style.backgroundSize = 'contain';
+       }
+     }
+   
+     window.addEventListener('load', cambiarFondo);
+     window.addEventListener('resize', cambiarFondo);
+   
+     cambiarFondo();
 });
 
