@@ -18,14 +18,22 @@ function showInfo(info) {
   htmlContenido += `
         <div class="row">
             <div class="d-flex justify-content-between mb-3 mt-3"> 
-                <h1>${info.name}</h1> 
-                    <button type="button" 
-                        class="btn btn-outline-success btn-lg active" 
-                        onClick="carrito()"
-                        id="btnComprar">
-                        <i class="bi bi-cart-fill"></i>
-                        Agregar al carrito
-                    </button>
+                <h2 class="display-md-3 display-sm-6 align-self-center">${info.name}</h2> 
+                <div class="d-none d-lg-block align-self-center">
+                  <button type="button" onClick="carrito()"  class="btn btn-lg btn-success" id="btnComprar">
+                  <i class="bi bi-cart-fill"></i>
+                  Agregar al carrito</button>
+                </div>
+              <div class="d-none d-md-block d-lg-none align-self-center">
+                <button type="button" onClick="carrito()" class="btn btn-success" id="btnComprar">
+                <i class="bi bi-cart-fill"></i>
+                Agregar al carrito</button>
+              </div>
+              <div class="d-sm-block d-md-none align-self-center">
+                <button type="button" onClick="carrito()" class="btn btn-sm btn-success" id="btnComprar">
+                <i class="bi bi-cart-fill"></i>
+                Agregar al carrito</button>
+              </div>
             </div>
             <hr>
             <p class="mb-1 fw-bold">Precio</p>
@@ -154,18 +162,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mes <= 9) mes = "0" + mes;
     CreateDiv(
       divGral,
-      `${
-        fecha.getFullYear() +
-        "-" +
-        mes +
-        "-" +
-        dia +
-        " " +
-        fecha.getHours() +
-        ":" +
-        fecha.getMinutes() +
-        ":" +
-        fecha.getSeconds()
+      `${fecha.getFullYear() +
+      "-" +
+      mes +
+      "-" +
+      dia +
+      " " +
+      fecha.getHours() +
+      ":" +
+      fecha.getMinutes() +
+      ":" +
+      fecha.getSeconds()
       }`
     );
 
@@ -195,17 +202,16 @@ document.addEventListener("DOMContentLoaded", () => {
       let product = resultObj.data;
       var primero = true;
       product.relatedProducts.forEach((related) => {
-        
+
         let div = document.createElement("div"); // <div></div>
-        if (primero)
-        {
+        if (primero) {
           div.classList.add("carousel-item"); // <div class="carousel-item"></div>
           div.classList.add("active"); // <div class="carousel-item active"></div>
         }
         else div.classList.add("carousel-item"); // <div class="carousel-item"></div>
-                
+
         let carta = document.createElement("div");
-        
+
         carta.classList.add("container-sm");
         carta.classList.add("d-flex");
         carta.classList.add("justify-content-center");
