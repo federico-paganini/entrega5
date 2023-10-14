@@ -22,6 +22,29 @@ btnreg.addEventListener("click", () => {
     btn.style.transform = "translateX(100%)";
 })
 
+ /* Adaptar el fondo según el tamaño de la pantalla */ 
+ const background = document.getElementsByTagName("body")[0];
+
+ function cambiarFondo() {
+   const width = window.innerWidth;
+   const height = window.innerHeight;
+
+   if (width > height) {
+     background.style.background = 'url("../img/Fondo_login.png"), linear-gradient(to left, #ff914d, #ff3131)';
+     background.style.backgroundRepeat = 'no-repeat'
+     background.style.backgroundSize = 'contain';
+   } else {
+     background.style.background = 'url("../img/fondo_login_sm.jpg"), linear-gradient(to left, #ff914d, #ff6740)';
+     background.style.backgroundRepeat = 'no-repeat'
+     background.style.backgroundSize = 'contain';
+   }
+ }
+
+ window.addEventListener('load', cambiarFondo);
+ window.addEventListener('resize', cambiarFondo);
+
+ cambiarFondo();
+
 /* Redireccion a index con login realizado */
 
 document.addEventListener("DOMContentLoaded", function () {
