@@ -3,15 +3,8 @@
 body {
   background-image: url('../img/Fondo_login.png'), linear-gradient(to left, #ff914d, #ff3131);
   background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
-}
-
-@media (max-width: 768px) {
-  body {
-   background-image: url('../img/fondo_login_sm.jpg'), linear-gradient(to left, #ff914d, #ff6740);
-   background-repeat: no-repeat;
-   background-size: contain;
-  }
 }
 
 .logo {
