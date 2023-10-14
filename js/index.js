@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", function(){
        const height = window.innerHeight;
    
        if (width > height) {
-         jumbotron.style.backgroundImage = 'url("../img/cover_back.png")';
+         jumbotron.style.background = 'url("../img/cover_back.png")';
          jumbotron.style.backgroundSize = 'contain';
        } else {
-         jumbotron.style.backgroundImage = 'url("../img/cover_back_sm.png")';
+         jumbotron.style.background = 'url("../img/cover_backsm.png")';
          jumbotron.style.backgroundSize = 'contain';
        }
      }
