@@ -250,6 +250,10 @@ document.addEventListener("DOMContentLoaded", () => {
         */
         primero = false;
         document.getElementById("relacionadosDiv").appendChild(div);
+
+        botonAgregarCarrito.addEventListener("click", () => {
+          carrito(related.id, related.name, related.currency + related.cost, related.image);
+        });
       });
     }
   });
@@ -257,20 +261,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
  //Evento del boton "agregar al carrito" que esta junto a los productos
 
-
 function carrito(id ,nombre, precio, imagen){
   const infoProducto = JSON.parse(localStorage.getItem('infoProducto')) || [];
   
-  const productoExistente = infoProducto.find(item => item.id === info.id);
+  const productoExistente = infoProducto.find(item => item.id === id);
 
   if (productoExistente){
     alert ("Este producto ya se encuentra en el carrito. Si desea ajustar la cantidad, ingrese a 'Mi carrito' desde su perfil")
   } else{
     const DatosProducto={
-      id: info.id,
-      nombre: info.name,
-      precio: `${info.currency} ${info.cost}`,
-      imagen: info.image,
+      id: id,
+      nombre: nombre,
+      precio: precio,
+      imagen: imagen,
       cantidad: 1
     };
     infoProducto.push(DatosProducto);
