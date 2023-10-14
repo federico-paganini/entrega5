@@ -20,7 +20,8 @@ body {
 
 .sizepers {
   min-height: 100vh;
-  width: 90vh;
+  width: 600px;
+  max-width: 95%;
 }
 
 .container2 {
@@ -48,7 +49,15 @@ body {
   z-index: 1;
   width: 50%;
   font-weight: bolder;
-  font-size: 2.5vh;
+  font-size: 1.5vw;
+}
+
+@media (max-width: 768px) {
+    #btn-log,
+    #btn-reg {
+      font-weight: bolder;
+      font-size: 1.3vh;
+    }
 }
 
 #btn {
@@ -121,7 +130,6 @@ body {
 }
 
 #btn-submitreg {
-  width: 50%;
   padding: 10px 30px;
   cursor: pointer;
   display: block;
