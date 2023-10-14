@@ -16,7 +16,7 @@
 <body>
   <main>
     <div class="container d-flex justify-content-center align-items-center sizepers">
-      <div class="card formulary container2">
+      <div class="card formulary container2 mt-1">
         <div class="card-body">
           <!--Logo de e-Mercado-->
           <div class="form-group text-center">
@@ -43,13 +43,17 @@
               <input type="password" name="contraseña" class="form-control" id="Pass" minlength="6"
                 placeholder="Contraseña" required>
             </div>
-            <div class="form-group d-flex justify-content-between mt-1">
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" name="mantenerini" id="manteneriniciado">
-                <label class="form-check-label" for="manteneriniciado">Mantener sesión
-                  abierta</label>
+            <div class="row mt-1">
+              <div class="col-sm-6 col-12 d-flex justify-content-center">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" name="mantenerini" id="manteneriniciado">
+                  <label class="form-check-label" for="manteneriniciado">Mantener sesión
+                    abierta</label>
+                </div>
               </div>
-              <a href="">¿Olvidaste tu contraseña?</a>
+              <div class="col-sm-6 col-12 d-flex justify-content-center">
+                <a href="">¿Olvidaste tu contraseña?</a>
+              </div>
             </div>
             <div class="form-group text-center mt-3">
               <button type="submit" id="btn-submitlog" class="btn btn-primary btn-lg">Ingresar</button>
@@ -107,9 +111,10 @@
                 minlength="6" required>
             </div>
             <div class="form-group">
-              <input type="checkbox" class="form-check-input" name="recibedata" id="chk-data">
-              <label class="form-check-label" for="chk-data">¿Deseas recibir información
-                actualizada?</label>
+              <label class="form-check-label d-flex" for="chk-data">
+                <input type="checkbox" class="form-check-input me-2" name="recibedata" id="chk-data"> ¿Deseas recibir
+                información actualizada?
+              </label>
             </div>
             <div class="form-group text-center mb-3 mt-3">
               <button type="submit" name="subtn" id="btn-submitreg" class="btn btn-primary">REGISTRARME</button>
