@@ -43,10 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (width > height) {
             jumbotron.style.background = 'url("../img/cover_back.png")';
             jumbotron.style.backgroundRepeat = 'no-repeat';
+            jumbotron.style.backgroundPosition = 'center';
             jumbotron.style.backgroundSize = 'contain';
         } else {
             jumbotron.style.background = 'url("../img/cover_backsm.png")';
             jumbotron.style.backgroundRepeat = 'no-repeat';
+            jumbotron.style.backgroundPosition = 'center';
             jumbotron.style.backgroundSize = 'contain';
         }
     }
