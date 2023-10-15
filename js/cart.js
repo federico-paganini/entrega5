@@ -20,11 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
             cartData.articles.forEach(product => {
                 agregarProductoFecheado(product);
             });
-        /* const infoProducto = JSON.parse(localStorage.getItem('infoProducto')) || [];
-        console.log('Datos del carrito:', infoProducto); // Verificar datos en consola
-        infoProducto.forEach((DatosProducto) => {
-        agregarProductoNuevo(DatosProducto);
-            });*/
         })
         .catch(error => {
             console.error("La solicitud no se completó correctamente", error);
@@ -51,28 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     </td>
                     <td class="negrita" id="impResult">${moneda + " " + resultado}</td>
                     <td>
-                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                        <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
                     </td>
                 </tr>`;
     }
-    
-    //Agregar nuevo producto al carrito
-    /*function agregarProductoNuevo(producto) {
-        let inputcart = document.createElement("input");
-        inputcart.value = producto.cantidad;
-        inputcart.placeholder = inputcart.value;
-        inputcart.classList.add("text-center", "small-input-carrito");
 
-        productosCarrito.innerHTML += `
-            <tr class="text-center">
-                <th><img id="imageCart" src=${producto.imagen}></th>
-                <td>${producto.nombre}</td>
-                <td>${producto.precio}</td>
-                <td>${inputcart.outerHTML}</td>
-                <td class="negrita">${producto.precio * producto.cantidad}</td>
-                <td>
-                    <button class="btn btn-danger btn-sm">Eliminar</button>
-                </td>
-            </tr>`;
-    }*/
+    const infoProducto = JSON.parse(localStorage.getItem('infoProducto')) || [];
+        console.log('Datos del carrito:', infoProducto); // Verificar datos en consola
+        infoProducto.forEach((DatosProducto) => {
+        agregarProducto(DatosProducto.nombre, DatosProducto.moneda, DatosProducto.imagen, DatosProducto.precio, DatosProducto.cantidad);
+            });
 });

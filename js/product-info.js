@@ -235,25 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         carta.appendChild(carta2);
         div.appendChild(carta);
-
-
-        /* lo de arriba es lo mismo que esto sin el evento
-        var carta = "" ;
-        if (primero)
-          carta += `<div class="carousel-item active">`;
-        else carta += `<div class="carousel-item">`;
-
-        carta += `<div class ="container-sm d-flex justify-content-center">`;
-
-        carta += `<div class="card" style="width: 18rem;">
-        <img src="${related.image}" class="card-img-top">
-        <div class="card-body">
-        <h5 class="card-title">${related.name}</h5>
-        </div>
-        </div>
-        </div>
-        </div>`
-        */
         primero = false;
         document.getElementById("relacionadosDiv").appendChild(div);
       });
@@ -263,26 +244,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
  //Evento del boton "agregar al carrito" que esta junto a los productos
 
-function carrito(id, nombre, precio, imagen) {
+function carrito() {
   const infoProducto = JSON.parse(localStorage.getItem('infoProducto')) || [];
-  console.log(infoProducto)
 
-  const productoExistente = infoProducto.find(item => item.id === id);
+  const productoExistente = infoProducto.find(item => item.id === info.id);
+  console.log(productoExistente);
 
   if (productoExistente) {
     productoExistente.cantidad++;
+    localStorage.setItem('infoProducto', JSON.stringify(infoProducto));
+    alert("El producto ya está en el carrito, se sumó una unidad");
   } else {
     const DatosProducto = {
       id: info.id,
       nombre: info.name,
-      precio: info.currency +""+ info.cost,
+      moneda: info.currency,
+      precio: info.cost,
       imagen: info.images[0],
+      cantidad: 1,
     };
     infoProducto.push(DatosProducto);
-    console.log(DatosProducto)
+    localStorage.setItem('infoProducto', JSON.stringify(infoProducto));
+    alert("Producto agregado al carrito con éxito.");
   }
-  localStorage.setItem('infoProducto', JSON.stringify(infoProducto));
-  alert("Producto agregado al carrito con éxito.");
+  
+  
 }
 
 
