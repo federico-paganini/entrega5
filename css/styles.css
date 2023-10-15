@@ -374,3 +374,18 @@ a.custom-card:hover {
   transform: translate(30px);
   opacity: 1;
 }
+
+#imageCart{
+
+  width: 50px;
+
+}
+
+.small-input-carrito {
+    width: 80px; 
+  
+}
+
+.negrita {
+  font-weight: bold;
+}
