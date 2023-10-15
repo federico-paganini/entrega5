@@ -382,8 +382,9 @@ a.custom-card:hover {
 }
 
 .small-input-carrito {
-    width: 80px; 
-  
+    min-width: 60px;
+    max-width: 100%; 
+    width: 5vw;  
 }
 
 .negrita {

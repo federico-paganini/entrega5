@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${nombre}</td>
                     <td>${moneda + " " + costoUnitario}</td>
                     <td>
-                        <div class="form-group call">
-                            <input type="number" value=${cantidad} min="1" style="width: 20%" onchange="actualizarSubtotal(this, ${costoUnitario})">
+                        <div class="form-group justify-content-center d-flex">
+                            <input type="number" class="form-control small-input-carrito" value=${cantidad} min="1" onchange="actualizarSubtotal(this, ${costoUnitario})">
                         </div>
                     </td>
                     <td class="negrita" id="impResult">${moneda + " " + resultado}</td>
