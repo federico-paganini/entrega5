@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     li_nav.classList.add("nav-item");
     li_nav.classList.add("dropdown");
     li_nav.innerHTML = `
-        <span class ="nav-link" id="userdisplay" role="button" data-bs-toggle="dropdown" 
-        aria-expanded="false" data-bs-auto-close="false">${email}
+        <span class ="nav-link ms-lg-0 ms-2" id="userdisplay" role="button" data-bs-toggle="dropdown" 
+        aria-expanded="false" data-bs-auto-close="outside">${email}
         <i class="bi bi-caret-up" id="hideuserm" style="display: none;"></i>
         <i class="bi bi-caret-down" id="showuserm"></i>
         </span>
@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
     //Aquí comienza el código para crear el menu desplegable del usuario
     let MenuDesplegable = document.createElement("ul");
     MenuDesplegable.classList.add("dropdown-menu");
+    MenuDesplegable.classList.add("dropdown-menu-end");
     MenuDesplegable.classList.add("back-lgmode");
+    MenuDesplegable.classList.add("mt-lg-2");
     MenuDesplegable.setAttribute("id", "usermenubox");
 
     MenuDesplegable.innerHTML = ` 
