@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </li>
     <li><hr class="dropdown-divider"></li>
     <li>
-        <a class="dropdown-item" href="login.html">
+        <a class="dropdown-item" href="login.html" id="CerrarSesion">
             <i class="bi bi-door-closed"></i> 
             Cerrar sesión
         </a>
@@ -81,7 +81,22 @@ document.addEventListener("DOMContentLoaded", function () {
             li_nav.classList.add("userclicked");
         }
     })
+    
+//Se borran los datos del carrito almacenados en localStorage al cerrar sesión
+    function CerrarSesion(){
+        localStorage.removeItem("carrito")
+        localStorage.removeItem("infoProducto")
+        window.location.href="login.html"
+    };
 
+    const BotonCerrarSesion=document.getElementById("CerrarSesion");
+
+        if (BotonCerrarSesion) {
+            BotonCerrarSesion.addEventListener("click", (e) => {
+                e.preventDefault();
+                CerrarSesion();
+            });
+        };
 
     //Eventos para cambiar el tema de claro a osuro. Algunos elementos no se cambiaban con activar el switch
     //ya que son personalizados, por lo que se trataron de forma específica
