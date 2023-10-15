@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     li_nav.classList.add("nav-item");
     li_nav.classList.add("dropdown");
     li_nav.innerHTML = `
-        <span class ="nav-link" id="userdisplay" role="button" data-bs-toggle="dropdown" 
+        <span class ="nav-link ms-lg-0 ms-2" id="userdisplay" role="button" data-bs-toggle="dropdown" 
         aria-expanded="false" data-bs-auto-close="outside">${email}
         <i class="bi bi-caret-up" id="hideuserm" style="display: none;"></i>
         <i class="bi bi-caret-down" id="showuserm"></i>
