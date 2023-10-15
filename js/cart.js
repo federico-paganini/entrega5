@@ -10,7 +10,6 @@ function subTotal(costoUnitario, cantidad) {
     return costoUnitario * cantidad;
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const productosCarrito = document.getElementById("productosCarrito");
 
@@ -25,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error("La solicitud no se completó correctamente", error);
         });
-
-
 
 
     function agregarProductoFecheado(producto) {
